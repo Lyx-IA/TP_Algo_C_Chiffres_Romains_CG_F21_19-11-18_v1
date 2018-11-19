@@ -1,0 +1,62 @@
+Programme chiffres romains
+
+1 : Chiffres décimales -> chiffres Romains
+2 : Chiffres Romains -> chiffres décimales
+3 : Quitter 
+
+De 1 à 3999
+
+Idée pour l'algo
+
+	2519
+	MM
+
+	519
+	D
+
+	19
+	X
+
+	9
+	IX
+_________________________________________________
+
+
+//BUT: Demander un nombre entier à l'utilisateur et le retranscrire en chiffres Romains
+//ENTREE: Un nombre composé de chiffres Romains
+//SORTIE: un nombre entier correspondant 
+
+ALGORITHME chiffres_romains
+
+CONST 
+	NBMIN=1<-ENTIER
+	NBMAX=3999<-ENTIER
+	TAILLEMAX=13<-ENTIER
+
+VAR 
+	nbEntier=ENTIER
+	nbRomain=CHAINE DE CARACTERE
+	reste=ENTIER
+	quotient=ENTIER
+	cpt=ENTIER
+
+DEBUT
+	
+	REPETER
+	ECRIRE "Veuillez saisir un nombre entre 1 et 3999 à transcrire en chiffres Romains"
+	LIRE nb1
+
+	//Test pour empêcher d'avoir moins que 1 et plus de 3999
+	SI (nb1<NBMIN) OU (nb1>NBMAX) ALORS
+	ECRIRE "Veuillez saisir un nombre entre 1 et 3999 !!!"
+	FINSI
+	JUSQU'A
+	(nb1>NBMIN) OU (nb1<NBMAX)
+
+	//Test pour les milliers
+	quotient<- nbEntier DIV 1000 
+	POUR i de 1 à quotient FAIRE
+	nbRomain<-nbRomain+'M'
+	FINPOUR
+
+	//Test pour les centaines
